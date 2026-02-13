@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevVault | Professional App Ecosystem</title>
+    <style>
+        /* --- MODERN TECH THEME --- */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        :root {
+            --accent: #E2B75C; 
+            --bg-body: #0B0D0E;
+            --bg-card: #14171A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8E9296;
+            --border: rgba(255, 255, 255, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin: 0;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-size: 1rem;
+        }
+
+        /* --- GALLERY GRID --- */
+        #main-view {
+            display: block;
+        }
+
+        #store-front {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .app-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .app-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            background: #181B1E;
+        }
+
+        .app-category {
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .app-item h3 {
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+        }
+
+        .app-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* --- DETAIL PAGE --- */
+        #app-detail-view {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .back-nav {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 40px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .back-nav:hover { color: var(--accent); }
+
+        .detail-hero {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 60px;
+        }
+
+        .version-badge {
+            background: rgba(226, 183, 92, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .download-sidebar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 16px;
+            height: fit-content;
+            position: sticky;
+            top: 40px;
+        }
+
+        .install-btn {
+            display: block;
+            background: var(--accent);
+            color: #000;
+            text-align: center;
+            padding: 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+
+        .install-btn:hover { opacity: 0.9; transform: scale(1.02); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 850px) {
+            .detail-hero { grid-template-columns: 1fr; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div id="main-view">
+            <header>
+                <h1>DevVault Ecosystem</h1>
+                <p>Curated professional software developed by Rahul Sonawane.</p>
+            </header>
+            <div id="store-front">
+                </div>
+        </div>
+
+        <div id="app-detail-view">
+            <button class="back-nav" onclick="goBack()">← Back to Ecosystem</button>
+            <div class="detail-hero" id="detail-content">
+                </div>
+        </div>
+
+        <footer style="margin-top: 100px; text-align: center; color: var(--text-secondary); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 40px;">
+            Designed & Engineered by Rahul Sonawane &copy; 2026
+        </footer>
+    </div>
+
+    <script>
+        // --- 1. DYNAMIC DATA SOURCE ---
+        // ADD NEW APPLICATIONS HERE
+        const apps = [
+            {
+                id: "resume-builder",
+                title: "AI Resume Builder",
+                category: "Productivity / AI",
+                tagline: "The Power to Write Your Destiny",
+                version: "1.0.1 Stable",
+                shortDesc: "A smart engine designed to automate professional CV creation with precision formatting.",
+                fullDesc: "The AI Resume Builder utilizes advanced logic to structure, format, and export professional resumes. It eliminates the struggle of manual layout, allowing you to focus on content impact. Developed as a high-performance solution for the modern job seeker.",
+                features: ["Intelligent Content Suggestions", "High-Fidelity PDF Exporting", "Auto-Formatting Logic", "Local Data Security"],
+                platform: "Android (APK)",
+                downloadUrl: "https://github.com/RahulSonawane-rgb/AI-Resume-Builder/releases/download/v1.0.1/ResumeBuilder.apk"
+            },
+            // {
+            //     id: "money-ledger",
+            //     title: "Money Ledger",
+            //     category: "Finance / Utility",
+            //     tagline: "Your Personal Financial Diary",
+            //     version: "1.0.0 Beta",
+            //     shortDesc: "A local-first, privacy-focused financial tracking and peer-to-peer debt management system.",
+            //     fullDesc: "Built to solve the complexity of tracking money owed to/by friends and family. This tool acts as a digital diary for your transactions, ensuring you never lose track of your liquidity or group investments.",
+            //     features: ["P2P Debt Tracking", "Liquidity Risk Alerts", "Investment Logs", "Browser-Only Storage"],
+            //     platform: "Web Application",
+            //     downloadUrl: "https://rahulsonawane-rgb.github.io/money-manager-ledger/" 
+            // }
+        ];
+
+        // --- 2. CORE ENGINE ---
+
+        function initStore() {
+            const storeFront = document.getElementById('store-front');
+            storeFront.innerHTML = apps.map(app => `
+                <div class="app-item" onclick="navigateTo('${app.id}')">
+                    <div class="app-category">${app.category}</div>
+                    <h3>${app.title}</h3>
+                    <p>${app.shortDesc}</p>
+                    <div style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Explore Details →</div>
+                </div>
+            `).join('');
+
+            // Initial route check
+            handleRouting();
+        }
+
+        function navigateTo(appId) {
+            window.location.hash = appId;
+        }
+
+        function goBack() {
+            window.location.hash = "";
+        }
+
+        function handleRouting() {
+            const hash = window.location.hash.replace('#', '');
+            if (!hash) {
+                document.getElementById('main-view').style.display = 'block';
+                document.getElementById('app-detail-view').style.display = 'none';
+            } else {
+                renderDetailPage(hash);
+            }
+        }
+
+        function renderDetailPage(appId) {
+            const app = apps.find(a => a.id === appId);
+            if (!app) {
+                window.location.hash = "";
+                return;
+            }
+
+            const detailContent = document.getElementById('detail-content');
+            detailContent.innerHTML = `
+                <div class="content-side">
+                    <span class="version-badge">${app.version}</span>
+                    <h2 style="font-size: 3.5rem; margin: 20px 0 10px 0; letter-spacing: -2px;">${app.title}</h2>
+                    <p style="color: var(--accent); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">${app.tagline}</p>
+                    
+                    <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; margin: 40px 0;">
+                        ${app.fullDesc}
+                    </p>
+
+                    <h4 style="margin-bottom: 20px; color: white;">Key Capabilities</h4>
+                    <ul style="color: var(--text-secondary); line-height: 2.2; font-size: 1rem;">
+                        ${app.features.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="download-sidebar">
+                    <h4 style="margin: 0 0 10px 0;">Acquire Artifact</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 30px;">
+                        Deployment target for this version: <strong>${app.platform}</strong>.
+                    </p>
+                    
+                    <a href="${app.downloadUrl}" class="install-btn" target="_blank">Get Application</a>
+
+                    <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-secondary);">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                            <span>Security:</span> <span style="color:white">Local Encryption</span>
+                        </div>
+                        <div style="display:flex; justify-content:space-between;">
+                            <span>Status:</span> <span style="color:white">Verified</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('main-view').style.display = 'none';
+            document.getElementById('app-detail-view').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Listen for browser back/forward and hash changes
+        window.addEventListener('hashchange', handleRouting);
+
+        // Run on load
+        initStore();
+    </script>
+</body>
+</html>
