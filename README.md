@@ -1,33 +1,36 @@
-# DevVault Ecosystem 🚀
+# DevVault Ecosystem
 
-Welcome to my personal application ecosystem. This repository serves as the central hub and storefront for all the professional utilities and software I have developed.
+Welcome to **DevVault**, a centralized ecosystem for professional software, utilities, and experimental artifacts. This repository serves as the official storefront and distribution hub for my independent projects.
 
 ## 🌐 Live Storefront
-**[View the App Store Live](https://sorahul196-code.github.io/dev-vault/)**
+Access the full catalog of applications via the web-based ecosystem:
+**[Launch DevVault Storefront](https://sorahul196-code.github.io/dev-vault/)**
 
 ---
 
-## 📦 Featured Applications
+## 🏛 Ecosystem Overview
+Every application within this vault is built with a core philosophy:
+- **Privacy First:** Local-first data persistence—your data never leaves your device.
+- **Performance:** Lightweight binaries and zero-latency web experiences.
+- **Minimalism:** Purpose-built tools without the bloat of traditional enterprise software.
 
-### 1. AI Resume Builder (Android)
-A sophisticated logic-based engine for professional career documentation.
-- **Tech:** AI Logic, Android SDK, PDF Libs.
-- **Status:** Stable v1.0.1
+## 🛠 Tech Stack & Engineering
+The ecosystem leverages a diverse range of modern technologies to solve specific problems:
+- **Mobile:** Android (APK) development focused on utility.
+- **Web:** High-performance Vanilla JS, Local-First APIs, and Modern CSS.
+- **AI:** Integration of intelligent logic for automated productivity tools.
 
-### 2. Money Manager Ledger (Web)
-A local-first, privacy-focused financial tracking and P2P debt management system.
-- **Tech:** Vanilla JS, LocalStorage API, CSS3.
-- **Status:** Beta v1.0.0
+## 📂 Repository Structure
+- `index.html`: The core dynamic storefront engine.
+- `/artifacts`: Compiled binaries and assets for various platforms.
+- `README.md`: Ecosystem documentation.
+- `LICENSE`: Open-source licensing information.
 
 ---
-
-## 🛠 Deployment & Privacy
-All applications in this ecosystem prioritize user privacy. 
-- **Local-First:** Data is stored locally on the user's device.
-- **No Tracking:** No external analytics or third-party databases are used.
 
 ## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This ecosystem is open-source and licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
 
----
-Developed by **Rahul Sonawane** | 2026
+## ✉️ Contact
+For inquiries regarding specific applications or collaboration:
+**Rahul Sonawane** - https://www.linkedin.com/in/rahulsonawane-rgb
