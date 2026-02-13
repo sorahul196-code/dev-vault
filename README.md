@@ -33,4 +33,4 @@ This ecosystem is open-source and licensed under the **MIT License**. See the [L
 
 ## ✉️ Contact
 For inquiries regarding specific applications or collaboration:
-**Rahul Sonawane** - https://www.linkedin.com/in/rahulsonawane-rgb
+**[Rahul Sonawane](https://www.linkedin.com/in/rahulsonawane-rgb)** -
